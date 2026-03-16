@@ -1,0 +1,273 @@
+[
+    {
+        "id": 1,
+        "Body": "¿Cual es la chucheria preferida de tu amigo?",
+        "Answer": ["Chocolate", "Papitas", "Galletas", "Mani yogurt", "Helado", "No tiene"],
+        "Correct": [3],
+        "FeedbackNegative": "Como es posible que no sepas eso? Es lo que mas le gusta a tu amigo!"
+    },
+    {
+        "id": 2,
+        "Body": "¿Cual es el color favorito de tu amigo?",
+        "Answer": ["Rojo", "Azul", "Verde", "Amarillo", "Morado"],
+        "Correct": [2],
+        "FeedbackNegative": "¿En serio no sabes cuál es el color favorito de tu amigo? ¡Esperaba más de ti!"
+    },
+    {
+        "id": 3,
+        "Body": "Qué aparato estabamos desesperados por utilizar cuando fuimos al evento de tecnologia y que queriamos hacer con ella",
+        "Answer": [],
+        "Correct": ["Una impresora 3D y queriamos imprimir un rayo que encontramos en internet de gratis pero no pudimos porque no lo hicimos a tiempo"],
+        "FeedbackNegative": "¿En serio no sabes qué aparato queríamos usar en el evento de tecnología? ¡Eso fue algo que ambos estábamos emocionados por probar!"
+    },
+    {
+        "id": 4,
+        "ImageName": "ErickCh4rly.png",
+        "Body": "Una ecuación sencilla para tí, no me dio tiempo de algo mejor sorry :C",
+        "Answer": [],
+        "Correct": ["El resultado da cH = 4r^l-y pero realmente quiere decir Charly"],
+        "FeedbackNegative": "Losiento si no lo ves, ves para la sección de quejas y mandame una sugerencia sorry"
+    },{
+        "id": 5,
+        "Body": "'zuaxoyz tuuu' ¿Qué será lo que querrá decir?",
+        "Answer": [],
+        "Correct": ["Es una frase encriptada que realmente es 'tourist nooo'"],
+        "FeedbackNegative": "Losiento si no lo ves, ves para la sección de quejas y mandame una sugerencia sorry"
+    }, {
+        "id": 6,
+        "Body": "¿Qué fue lo que fuiste a hacer en la IEEExtreme en vez de ayudarnos?",
+        "Answer": [],
+        "Correct": ["A ayudar a un gatito en la calle"],
+        "FeedbackNegative": "¿No te acuerdas?, fue muy lindo pero nos abandonaste"
+    }, {
+        "id": 45,
+        "Body": "¿Quedamos en hacer una cosa pero tú nunca puedes qué fue?",
+        "Answer": [],
+        "Correct": ["A comer una salchipapa o a ir al malecon a correr, cualquiera de las dos"],
+        "FeedbackNegative": "Yo tenia muchas ganas de hacer eso oiste, me ilusionaste"
+    }, {
+        "id": 7,
+        "Body": "¿Cual de estos juegos no juego yo?",
+        "Answer": ["Minecraft","REPPO","Brawl Stars","Terraria","Fall Guys","SilkSong"],
+        "Correct": [4],
+        "FeedbackNegative": "Yo tenia muchas ganas de hacer eso oiste, me ilusionaste"
+    }, {
+        "id": 8,
+        "Body": "¿Por qué me gusta tanto la sede 6?",
+        "Answer": [],
+        "Correct": ["No hay casi gente o Es muy comodo o Es un centro de Investigación"],
+        "FeedbackNegative": "Yo podría ir allá hasta con lluvia pero ¿Por qué?"
+    }, {
+        "id": 9,
+        "Body": "Aparte de siempre usar gorra, qué otra cosa suelo usar rara vez",
+        "Answer": [],
+        "Correct": ["A veces uso un pasamontaña un gorrito negro"],
+        "FeedbackNegative": "Contadas veces pueden verme usandolo"
+    }, {
+        "id": 10,
+        "Body": "¿Cual fue el modo que estaba tan obsecionado con hacer cuando estabamos haciendo TuHorario?",
+        "Answer": [],
+        "Correct": ["Queria hacer un modo Argentino, consistia en colores azules y blancos basicamente"],
+        "FeedbackNegative": "Era algo que repetia bastante pero nunca se logró"
+    }, {
+        "id": 11,
+        "Body": "¿Qué pasó el dia que fuimos a cine justo al entrar?",
+        "Answer": [],
+        "Correct": ["Estaba intentando entrar con dulces y el guardia se dio cuenta entonces pasé bastante tiempo con él haciendome el loco, dando vueltas a lo que decia"],
+        "FeedbackNegative": "Fue muy vergonsozo para mi"
+    }, {
+        "id": 12,
+        "Body": "¿A mi me gustaba bailar antes? ¿A donde?",
+        "Answer": [],
+        "Correct": ["Bailaba en mi universidad anterior y si me agradaba"],
+        "FeedbackNegative": "Fue una experiencia excelente lastima que en la Simon era diferente"
+    }, {
+        "id": 13,
+        "Body": "¿Qué programa queriamos hacer para el curso de base de datos que luego no quizimos hacer?",
+        "Answer": [],
+        "Correct": ["Un programa de rutas de buses"],
+        "FeedbackNegative": "Era un proyecto muy grande y teniamos flojera de hacerlo"
+    }, {
+        "id": 14,
+        "Body": "¿Qué app hicimos para el semillero de Investigación?",
+        "Answer": [],
+        "Correct": ["Una app de ejercicios para personas con dificultad visual"],
+        "FeedbackNegative": "Cómo no te vas a acordar si lo expusimos y todo"
+    }, {
+        "id": 15,
+        "Body": "¿Cual fue el plugin que hice y de que trataba?",
+        "Answer": [],
+        "Correct": ["Un plugin de minecraft que evitaba que se pudiera craftear sino que debias combinar items en el suelo, se podia combinar cualquier cosa"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 16,
+        "Body": "Qué le pasó a mi computador cuando lo llevé a la garantía?",
+        "Answer": [],
+        "Correct": ["Los tecnicos de ahí no le pusieron bien la RAM y entonces tenía menos RAM de lo habitual, tuve que desarmar la laptop"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 17,
+        "Body": "Cómo nos conocimos nosotros?",
+        "Answer": [],
+        "Correct": ["Me dijo que mi gorra estaba bacana en las escaleras pero yo lo ignoré porque estaba hablando con una compañera"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 18,
+        "Body": "Cómo nos conocimos nosotros?",
+        "Answer": [],
+        "Correct": ["Yo la contacté por Microsoft Teams porque ella habia faltado las primeras clases y le queria ayudar"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 19,
+        "Body": "Cómo nos conocimos nosotros?",
+        "Answer": [],
+        "Correct": ["Estabamos iendo de regreso de Santamarta en un evento de IEEE y el bus se quedó estancado en un embotellamiento y empezamos a hablar"],
+        "FeedbackNegative": ""
+    },{
+        "id": 20,
+        "Body": "Cuando empezamos a hablar nosotros?",
+        "Answer": [],
+        "Correct": ["En clase de calculo de varias variables dónde ellos me empezaron a hablar porque no comprendian y yo les ayudé"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 21,
+        "Body": "Cuando empezamos a hablar nosotros?",
+        "Answer": [],
+        "Correct": ["En clase de Fisica Electrica o en clase de logica matematica, una de las dos"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 22,
+        "Body": "¿GUAU?",
+        "Answer": ["No","Si"],
+        "Correct": [1],
+        "FeedbackNegative": ""
+    }, {
+        "id": 23,
+        "Body": "¿Cuando empezé a tomar?",
+        "Answer": ["Cuando tenia 15","A los 17 años", "TU TOMAR? Lo que puedes tomar es agua", "Justo en mi cumple 18","Con algunos cocteles" , "A los 16"],
+        "Correct": [2],
+        "FeedbackNegative": ""
+    }, {
+        "id": 24,
+        "Body": "¿Eres gei?",
+        "Answer": ["Si","Tal vez", "Pa ti", "No","Nunca" , "Monda"],
+        "Correct": [0],
+        "FeedbackNegative": ""
+    }, {
+        "id": 25,
+        "Body": "¿Cuantos años voy a cumplir?",
+        "Answer": [],
+        "Correct": ["Vas a cumplir 21 años"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 26,
+        "Body": "¿Qué dias le gusta a Charly?",
+        "Answer": ["Pierna","Cardio", "Salchipapa", "Pecho","Brazo" , "Espalda"],
+        "Correct": [4],
+        "FeedbackNegative": ""
+    }, {
+        "id": 27,
+        "Body": "¿Qué Minor (Opcion de grado) pienso escoger?",
+        "Answer": [],
+        "Correct": ["Minor de Ciberseguridad es el que quiero"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 28,
+        "Body": "¿Qué ocurrió cuando fuimos a Santa Marta?",
+        "Answer": [],
+        "Correct": ["El bus quedó detenido porque habia una protesta y tuvimos que esperar mucho tiempo para poder regresar"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 29,
+        "Body": "¿De las galletas que te dí cual fue la que más me gustó?",
+        "Answer": [],
+        "Correct": ["Me gustó la de fresa"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 30,
+        "Body": "¿Cual es el sticker de whatsapp que más uso?",
+        "Answer": [],
+        "Correct": ["Uno de un mono"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 31,
+        "Body": "¿Cuando nos conocimos Moises?",
+        "Answer": [],
+        "Correct": ["En octavo grado en bachillerato te empecé a hablar y de ahí pasabamos tiempo juntos"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 32,
+        "Body": "¿De que quiero ser yo?",
+        "Answer": ["Backend","Frontend","FullStack", "NingunStack"],
+        "Correct": [0],
+        "FeedbackNegative": ""
+    }, {
+        "id": 33,
+        "ImageName": "Roach.png",
+        "Body": "¿Cómo se llama el nombre de una SBD que queriamos usar?",
+        "Answer": [],
+        "Correct": ["Queriamos usar CockroachDB en linea pero no pudimos"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 34,
+        "ImageName": "Geniuses.png",
+        "Body": "????",
+        "Answer": [],
+        "Correct": ["915 es la respuesta del puzzle"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 35,
+        "Body": "¿Qué se ve en medio de marzo y abril que no se puede ver al principio ni al final de ninguno de los dos meses?",
+        "Answer": [],
+        "Correct": ["La letra R"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 36,
+        "Body": "Que hamburguesa quedamos pendiente por comprar algún dia?",
+        "Answer": [],
+        "Correct": ["Una hamburguesa con laminas de oro que era bastante cara"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 37,
+        "Body": "En qué semestre va tu amigo?",
+        "Answer": [],
+        "Correct": ["En el 8 semestre"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 38,
+        "Body": "0100000101101101 0110111100100000 01110011 0110 00010110 1100011000110 1101000011010010 11100000 110000101110 00001100001",
+        "Answer": [],
+        "Correct": ["'Amo la salchipapa' es la respuesta que se debe dar"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 39,
+        "Body": "¿En qué colegio estudié?",
+        "Answer": [],
+        "Correct": ["Estudié en el ITIDA en soledad"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 40,
+        "Body": "¿Es verdad que me gradué como tecnico aeronautico?",
+        "Answer": ["No", "Si"],
+        "Correct": [1],
+        "FeedbackNegative": ""
+    }, {
+        "id": 41,
+        "Body": "¿Quien es el mejor primo?",
+        "Answer": [],
+        "Correct": ["'Jose Carlos' debe ser la respuesta"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 42,
+        "Body": "El mensaje secreto está en nuestro chat de Whatsapp",
+        "Answer": [],
+        "Correct": ["Patatas"],
+        "FeedbackNegative": ""
+    }, {
+        "id": 43,
+        "Body": "Frabjous glip-glop zorpal-ding, niffle flarble snickerdoodle zorp. Glorp-shmorp quiddle-bip blamph, skritch-scratch wozzel flim-flam.",
+        "Answer": [],
+        "Correct": ["NO HAY RESPUESA CORRECTA, SIEMPRE VA A ESTAR MAL, NO PUEDES DECIR QUE 'SI'"],
+        "FeedbackNegative": ""
+    }
+]

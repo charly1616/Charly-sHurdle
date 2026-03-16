@@ -1,0 +1,232 @@
+[
+  {
+    "id": 1,
+    "FullName": "Olga Parra",
+    "Color": "#4CAF50",
+    "Icon": "fa-solid fa-apple-whole",
+    "NickName": "OlgaP",
+    "Questions": [1, 8, 9, 12, 13, 23, 25, 27, 33, 38, 39, 42],
+    "tags": ["Bailarina", "Buena amiga", "Los cuentos más raros"],
+    "SuccessText": "¡Olga la más bravota! Eres geniuna y modesta te quiero mucho."
+  },
+  {
+    "id": 2,
+    "FullName": "Juan Alvarez",
+    "Color": "#2196F3",
+    "Icon": "fa-solid fa-table-tennis-paddle-ball",
+    "NickName": "JuanA",
+    "Questions": [1, 7, 8, 9, 10, 13, 22, 23, 25, 27, 33, 38, 42],
+    "tags": ["Teniscista", "Trabajador", "Mano derecha"],
+    "SuccessText": "¡Punto, set y partido! Tu esfuerzo siempre da en el blanco, sigue siendo así de auténtico."
+  },
+  {
+    "id": 3,
+    "FullName": "Luis Perez",
+    "Color": "#FFC107",
+    "Icon": "fa-solid fa-bolt-lightning",
+    "NickName": "LuisP",
+    "Questions": [3, 1, 7, 9, 15, 22, 23, 24, 25, 28, 38, 42],
+    "tags": ["Excelente persona", "Organizador", "Buena energía"],
+    "SuccessText": "Eres bastante calmado y auténtico, estoy feliz de ser tu amigo."
+  },
+  {
+    "id": 4,
+    "FullName": "Erick Donado",
+    "Color": "#00BCD4",
+    "Icon": "fa-solid fa-cat",
+    "NickName": "ErickDo",
+    "Questions": [2, 4, 5, 6, 7,45, 23, 25, 28, 42],
+    "tags": ["Mr.Angry Kitten", "Realista", "Inspirador"],
+    "SuccessText": "Estoy feliz de ser tu amigo, te encuentro como una persona a seguir."
+  },
+  {
+    "id": 5,
+    "FullName": "Jorge Jimenez",
+    "Color": "#9C27B0",
+    "Icon": "fa-solid fa-spider",
+    "NickName": "JorgeJ",
+    "Questions": [1, 7, 8, 11, 16, 17, 23, 24, 25, 38, 42],
+    "tags": ["Maduro", "Inteligente", "Buen amigo"],
+    "SuccessText": "¡Atrapado en tu red de inteligencia! pero ojo que ese poder viene con una gran responsabilidad."
+  },
+  {
+    "id": 6,
+    "FullName": "Deivid Garcia",
+    "Color": "#33FF57",
+    "Icon": "fa-solid fa-handshake-angle",
+    "NickName": "DeividG",
+    "Questions": [9, 13, 16, 23, 25, 27, 33, 38, 42],
+    "tags": ["Amistoso", "Solidario", "Genuino"],
+    "SuccessText": "¡Trato hecho! Tu agilidad mental ha cerrado este reto con éxito."
+  },
+  {
+    "id": 7,
+    "FullName": "Anyelina Niebles",
+    "Color": "#3357FF",
+    "Icon": "fa-solid fa-dove",
+    "NickName": "AnyelinaN",
+    "Questions": [2, 23, 25, 30, 34, 36, 37, 40, 42],
+    "tags": ["Sociable", "Simpatica", "Optimista"],
+    "SuccessText": "¡Vuela alto! cada vez que nos encontramos la paso aún mejor."
+  },
+  {
+    "id": 8,
+    "FullName": "Anyela Arteta",
+    "Color": "#E91E63",
+    "Icon": "fa-solid fa-champagne-glasses",
+    "NickName": "AnyelaA",
+    "Questions": [8, 2, 18, 23, 24, 25, 34, 37],
+    "tags": ["Divertida", "Ocurrente", "Independiente"],
+    "SuccessText": "Aunque no lo creas me comparo mucho a tí, sigue siendo tan cariñosa."
+  },
+  {
+    "id": 9,
+    "FullName": "Anthony Lechuga",
+    "Color": "#33FFF3",
+    "Icon": "fa-solid fa-crow",
+    "NickName": "LechugaA",
+    "Questions": [7, 8, 15, 22, 23, 24, 25, 38, 42],
+    "tags": ["Lechuga", "Ocurrente", "Seguro"],
+    "SuccessText": "¡Misión cumplida! La responsabilidad tiene su recompensa, proxima misión: un ManHunt."
+  },
+  {
+    "id": 10,
+    "FullName": "Francisco",
+    "Color": "#FF8C33",
+    "Icon": "fa-solid fa-glasses",
+    "NickName": "Francisco",
+    "Questions": [7, 8, 14, 23, 24, 25, 28, 32, 34, 38, 42],
+    "tags": ["Inteligente", "Racional", "Decidido"],
+    "SuccessText": "Siempre que hemos trabajado junto has sido como mi mano derecha, eres muy habilidoso"
+  },
+  {
+    "id": 11,
+    "FullName": "Geraldine",
+    "Color": "#8C33FF",
+    "Icon": "fa-solid fa-pager",
+    "NickName": "Geraldine",
+    "Questions": [28, 2, 19, 23, 25, 32, 34, 37, 38],
+    "tags": ["Creativa", "Simpatica", "Amigable"],
+    "SuccessText": "Has sido una muy buena amiga, me ayudas bastante y tienes intereses similares."
+  },
+  {
+    "id": 12,
+    "FullName": "Angie Polo",
+    "Color": "#33FF8C",
+    "Icon": "fa-solid fa-burger",
+    "NickName": "AngieP",
+    "Questions": [2, 20, 23, 25, 26, 29, 32, 34, 38, 40, 42],
+    "tags": ["Amigable", "Empatica", "Leal"],
+    "SuccessText": "¡Qué delicia de victoria! siempre tan decidida, me agrada hablar contigo, tus ocurrencias me divierten bastante."
+  },
+  {
+    "id": 13,
+    "FullName": "Romario Ramos",
+    "Color": "#FF3380",
+    "Icon": "fa-solid fa-dumbbell",
+    "NickName": "RomarioR",
+    "Questions": [2, 20, 22, 23, 24, 25, 26, 32, 34, 38, 42],
+    "tags": ["Genuino", "Activo", "Nigga"],
+    "SuccessText": "¡Aplastaste este reto! Puro músculo mental aja y pa cuando me invitas pelao."
+  },
+  {
+    "id": 14,
+    "FullName": "Yamil Gomez",
+    "Color": "#33A1FF",
+    "Icon": "fa-solid fa-dice",
+    "NickName": "YamilG",
+    "Questions": [2, 21, 22, 23, 24, 25, 34, 40, 42],
+    "tags": ["Passionate", "Inventive", "Friendly"],
+    "SuccessText": "No necesitas demostrar nada, haz lo que te gusta hacer y esfuerzate por seguir haciendolo."
+  },
+  {
+    "id": 15,
+    "FullName": "Marcos Pedroza",
+    "Color": "#FFA133",
+    "Icon": "fa-solid fa-paw",
+    "NickName": "MarcosP",
+    "Questions": [7, 2, 22, 23, 24, 25, 32, 38, 42],
+    "tags": ["Amigable", "Helpful", "Leal"],
+    "SuccessText": "¡Guau!."
+  },
+  {
+    "id": 16,
+    "FullName": "Maria Camila",
+    "Color": "#A133FF",
+    "Icon": "fa-solid fa-briefcase-medical",
+    "NickName": "MariaC",
+    "Questions": [2, 23, 25, 34, 35, 40, 41, 42],
+    "tags": ["Ocurrente", "Sociable", "Mejor prima"],
+    "SuccessText": "¡Diagnóstico: Éxito rotundo! Eres la mejor medicina."
+  },
+  {
+    "id": 17,
+    "FullName": "Moises Gomez",
+    "Color": "#33FFA1",
+    "Icon": "fa-brands fa-youtube",
+    "NickName": "MoisesG",
+    "Questions": [2, 23, 24, 25, 34, 35, 37, 31],
+    "tags": ["Ocurrente", "Generoso", "Carismatico"],
+    "SuccessText": "¿Sabes que me ayudaste bastante desde que te conoci?."
+  },
+  {
+    "id": 18,
+    "FullName": "Gustavo Gutierrez",
+    "Color": "#FF6B35",
+    "Icon": "fa-solid fa-futbol",
+    "NickName": "GustavoG",
+    "Questions": [1, 2, 7, 22, 23, 24, 25, 32, 34, 38],
+    "tags": ["Amistoso", "Apasionado", "Apatico"],
+    "SuccessText": "¡Golazo en el último minuto! Tu mente juega en las grandes ligas."
+  },
+  {
+    "id": 19,
+    "FullName": "Andrés Parra",
+    "Color": "#4A90E2",
+    "Icon": "fa-solid fa-atom",
+    "NickName": "AndresP",
+    "Questions": [7, 2, 23, 25, 32, 34, 35, 38],
+    "tags": ["Inteligente", "Visionario","Empatico"],
+    "SuccessText": "¡Reacción en cadena positiva! Has dominado la materia del reto."
+  },
+  {
+    "id": 20,
+    "FullName": "Juan Borrero",
+    "Color": "#338CFF",
+    "Icon": "fa-solid fa-palette",
+    "NickName": "BorreroJ",
+    "Questions": [7, 22, 23, 24, 25, 34, 37, 38],
+    "tags": ["Activo", "Habilidoso", "Filosofico"],
+    "SuccessText": "Eres muy ingenioso y tienes bastante creatividad, discutir contigo es como una explosión de ideas colisionando."
+  },
+  {
+    "id": 21,
+    "FullName": "Valentina Leon",
+    "Color": "#FF69B4",
+    "Icon": "fa-solid fa-snowflake",
+    "NickName": "ValentinaL",
+    "Questions": [2, 23, 25, 34, 35, 37, 42],
+    "tags": ["Polite", "Creative", "Knowledgeable"],
+    "SuccessText": "¡Tan única como un copo de nieve! Tu consideración brilla."
+  },
+  {
+    "id": 22,
+    "FullName": "Iris Gutierrez",
+    "Color": "#DA70D6",
+    "Icon": "fa-solid fa-ice-cream",
+    "NickName": "IrisGu",
+    "Questions": [8, 2, 23, 25, 35, 40, 42],
+    "tags": ["Modesta", "Decidida", "Reflectiva"],
+    "SuccessText": "Hace falta salir más Iris, tu sonrisa deslumbra al mundo."
+  },
+  {
+    "id": 23,
+    "FullName": "Charly B",
+    "Color": "#6e4217",
+    "Icon": "fa-solid fa-robot",
+    "NickName": "CharlyOC",
+    "Questions": [43],
+    "tags": ["Glorp", "flibber", "zorp"],
+    "SuccessText": "Zim-zalla florp-glorp glibberish, skritch-zorpal wozzle blasto-fizz bleep-bloop!"
+  }
+]

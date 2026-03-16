@@ -1,0 +1,135 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animaciones del carrusel */
+@keyframes scroll-right-to-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-180%); }
+}
+
+@keyframes scroll-left-to-right {
+  0% { transform: translateX(-174%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-scroll-right-to-left {
+  animation: scroll-right-to-left 60s linear infinite;
+}
+
+.animate-scroll-left-to-right {
+  animation: scroll-left-to-right 60s linear infinite;
+}
+
+
+@keyframes pulsing {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+@keyframes shiningText {
+  0%   { background-position: 0% 150%; }
+  100% { background-position: 300% 150%; }
+}
+
+.shiningText {
+  font-weight: bold;
+
+  background: linear-gradient(
+    120deg,
+    #ffffff,
+    #ffe448,
+    #ffe100,
+    #ffe448,
+    #ffffff
+  );
+
+  background-size: 300% 300%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  animation: shiningText 10s linear infinite;
+
+  text-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
+}
+
+.pulsing {
+  animation: pulsing 0.4s infinite;
+}
+
+
+.fade-edges {
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+:root {
+  /* Paleta de colores de la imagen */
+  --bg-color: #f8fafb;
+  --text-dark: #333333;
+  --teal-accent: #4db69e;
+  --blue-accent: #3b5998;
+  --green-accent: #48c78e;
+  --orange-accent: #ffab6d;
+  --purple-accent: #9b82f3;
+  --pink-accent: #e040fb;
+  --gray-light: #eeeeee;
+  --border-color: #e0e0e0;
+  
+  --font-body: "Lexend", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-body);
+  color: var(--text-dark);
+}
+
+.fade-edges {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.lexend-charly {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.agu-display {
+  font-family: "Agu Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 0;
+}
+
+
+.goldenShadow {
+  box-shadow:
+    0 2px 10px rgba(255, 215, 0, 0.4),
+    0 0 18px rgba(255, 215, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+
+.subtleShadow {
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.05),
+    0 8px 24px rgba(0,0,0,0.08);
+}
+
