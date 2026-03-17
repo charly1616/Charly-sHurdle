@@ -17,6 +17,8 @@ const FormPage = () => {
     const [colorBase, setColorBase] = useState("#606060");
     const [friend, setFriend] = useState({});
 
+    const [loading, setLoading] = useState(false)
+
     useEffect(() => {
         if (FriendId) {
             // 1. Usamos minúsculas para evitar líos en Vercel
@@ -170,7 +172,7 @@ const FormPage = () => {
             <main className="flex-1 flex items-center justify-center p-4 md:p-8">
                 <div className="w-full max-w-4xl rounded-[2rem] shadow-sm overflow-hidden flex flex-col">
 
-                    {currentQuestion ? (
+                    {(currentQuestion) ? (
                         <div className="p-6 md:p-12 flex flex-col gap-6">
                             {/* Título de la pregunta */}
                             <h2 className="text-2xl md:text-4xl font-bold text-gray-800 text-center leading-tight">
