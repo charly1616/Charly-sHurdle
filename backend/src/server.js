@@ -13,13 +13,23 @@ const __dirname = path.resolve()
 const app = express();
 const PORT = ENV.PORT || 3000;
 
-app.use(cors({ 
-  origin: "https://charly-s-hurdlefrontend.vercel.app", 
-  credentials: true 
-}));
+app.use(cors({ origin: ("https://1fj3pbb6-5173.use2.devtunnels.ms/"), credentials: true }));
 
 
-app.use(express.json({ limit: "5mb" }));
+app.use((req, res, next) => {
+  // 1. Permitir el origen de tu Dev Tunnel
+  res.header("Access-Control-Allow-Origin", "https://1fj3pbb6-5173.use2.devtunnels.ms");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  
+  // 2. LA CLAVE: Permitir explícitamente el acceso a la red local
+  res.header("Access-Control-Allow-Private-Network", "true");
+
+  next();
+});
+
+app.use(express.json());
 
 app.use("/api/Friends",FriendsRoutes);
 app.use('/api/suggestions', SuggestionsRoute);

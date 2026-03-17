@@ -13,7 +13,7 @@ const SuccessPage = () => {
     useEffect(() => {
 
         if (FriendId) {
-            fetch(`https://charlyshurdlebackend-tau.vercel.app/api/Friends/${FriendId}`)
+            fetch(`http://localhost:5000/api/Friends/${FriendId}`)
                 .then(response => response.json())
                 .then(data => {
                     if (!data.isFinished) {
@@ -181,7 +181,7 @@ const SuccessPage = () => {
             <Footer />
 
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+                @import url('http://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
                 
                 @media print {
                     button, footer { display: none !important; }

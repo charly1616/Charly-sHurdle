@@ -15,9 +15,7 @@ const HomePage = () => {
     };
 
     useEffect(() => {
-
-        console.log("Huuuuu")
-        fetch('https://charlyshurdlebackend-tau.vercel.app/api/friends')
+        fetch('http://localhost:5000/api/friends')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Error en la respuesta del servidor');
