@@ -1,134 +1,106 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+// Asegúrate de que el nombre sea Friend o Friends según tu archivo real
+import Friend from '../Models/Friend.js';
+import Question from '../Models/Question.js';
+import Attempt from '../Models/Attempt.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const friendsPath = path.join(__dirname, 'FriendsSource.json');
-const questionsPath = path.join(__dirname, 'GeneralQuestions.json');
-const attemptsPath = path.join(__dirname, 'Attempts.json');
-
-// Load data
-let friendsData = null;
-let questionsData = null;
-let attemptsData = null;
-
-function loadFriendsData() {
-    if (!friendsData) {
-        const data = fs.readFileSync(friendsPath, 'utf8');
-        friendsData = JSON.parse(data);
-    }
-    return friendsData;
-}
-
-function loadQuestionsData() {
-    if (!questionsData) {
-        const data = fs.readFileSync(questionsPath, 'utf8');
-        questionsData = JSON.parse(data);
-    }
-    return questionsData;
-}
-
-function loadAttemptsData(forceReload = true) {
-  if (!attemptsData || forceReload) {
+/**
+ * Obtiene todos los amigos y calcula si terminaron sus preguntas 
+ * y cuántos intentos fallidos tienen.
+ */
+async function getAllFriends() {
     try {
-      const data = fs.readFileSync(attemptsPath, 'utf8');
-      attemptsData = JSON.parse(data);
+        const friends = await Friend.find().lean();
+        const attempts = await Attempt.find().lean();
+
+        return friends.map(friend => {
+            const failedAttempts = attempts.filter(a => a.friendId === friend.id && !a.isCorrect).length;
+            const correctIds = new Set(
+                attempts
+                    .filter(a => a.friendId === friend.id && a.isCorrect && friend.Questions.includes(a.questionId))
+                    .map(a => a.questionId)
+            );
+            
+            const isFinished = correctIds.size >= friend.Questions.length;
+
+            return {
+                ...friend,
+                isFinished,
+                Attempts: failedAttempts
+            };
+        });
     } catch (error) {
-      attemptsData = [];
+        console.error("Error en getAllFriends:", error);
+        return [];
     }
-  }
-  return attemptsData;
 }
 
+/**
+ * Obtiene un amigo específico por su ID manual
+ */
+async function getFriendById(id) {
+    try {
+        const friend = await Friend.findOne({ id }).lean();
+        if (!friend) return null;
 
+        const attempts = await Attempt.find({ friendId: id }).lean();
 
-function getAllFriends() {
-    const friends = loadFriendsData();
-    return AreFriendsFinished(friends.map(friend => ({
-        ...friend,
-        Attempts: getFailedAttemptsForFriend(friend.id),
-    })));
+        const correctIds = new Set(
+            attempts
+                .filter(a => a.isCorrect && friend.Questions.includes(a.questionId))
+                .map(a => a.questionId)
+        );
+
+        const isFinished = correctIds.size >= friend.Questions.length;
+        const failedAttempts = attempts.filter(a => !a.isCorrect).length;
+
+        return {
+            ...friend,
+            isFinished,
+            Attempts: failedAttempts
+        };
+    } catch (error) {
+        console.error("Error en getFriendById:", error);
+        return null;
+    }
 }
 
-function getFriendById(id) {
-    const friends = loadFriendsData();
-    const friend = friends.find(f => f.id === id);
+/**
+ * Obtiene las preguntas restantes para un amigo (sin el campo 'Correct')
+ */
+async function getQuestionsForFriend(friendId) {
+    try {
+        const friend = await Friend.findOne({ id: friendId }).lean();
+        if (!friend) return null;
 
-    if (!friend) return null;
+        const attempts = await Attempt.find({ friendId, isCorrect: true }).lean();
+        const answeredQuestionIds = attempts.map(a => a.questionId);
 
-    // 1. Calculamos si terminó usando una lógica simple para un solo objeto
-    // (Para evitar pasar un objeto solo a una función que espera arreglos)
-    const attempts = loadAttemptsData();
-    const correctIds = new Set(
-        attempts
-            .filter(a => a.friendId === id && a.isCorrect && friend.Questions.includes(a.questionId))
-            .map(a => a.questionId)
-    );
-    
-    const isFinished = correctIds.size >= friend.Questions.length;
+        // Filtramos los IDs de preguntas que el amigo aún no ha respondido bien
+        const remainingQuestionIds = friend.Questions.filter(qId => !answeredQuestionIds.includes(qId));
 
-    // 2. Obtenemos los intentos fallidos
-    // IMPORTANTE: getFailedAttemptsForFriend NO debe llamar a getFriendById
-    const failedAttempts = attempts.filter(a => a.friendId === id && !a.isCorrect).length;
+        // Buscamos las preguntas en la DB omitiendo el campo 'Correct' por seguridad
+        const questions = await Question.find({ 
+            id: { $in: remainingQuestionIds } 
+        }).select('-Correct').lean();
 
-    return {
-        ...friend,
-        isFinished,
-        Attempts: failedAttempts
-    };
+        return questions;
+    } catch (error) {
+        console.error("Error en getQuestionsForFriend:", error);
+        return [];
+    }
 }
 
-
-//Populates friends with an isFinished property based on whether they have answered all their questions correctly
-function AreFriendsFinished(friends) {
-    const attempts = loadAttemptsData();
-
-    return friends.map(friend => {
-        const answeredCorrectly = attempts
-            .filter(attempt => attempt.friendId === friend.id)
-            .filter(attempt => attempt.isCorrect)
-            .filter(attempt => friend.Questions.includes(attempt.questionId))
-            .map(attempt => attempt.questionId);
-
-        const answSet = new Set(answeredCorrectly);
-        const isFinished = answSet.size >= friend.Questions.length;
-
-        return { ...friend, isFinished };
-    });
-}
-
-function getQuestionsForFriend(friendId) {
-    const friend = getFriendById(friendId);
-    if (!friend) return null;
-
-    const questions = loadQuestionsData();
-    const attempts = loadAttemptsData();
-    const answeredQuestionIds = attempts
-        .filter(attempt => attempt.friendId === friendId && attempt.isCorrect)
-        .map(attempt => attempt.questionId);
-
-    
-    const friendQuestions = friend.Questions
-        .filter(qId => !answeredQuestionIds.includes(qId))
-        .map(qId => {
-            const question = questions.find(q => q.id === qId);
-            if (question) {
-                // Create a copy without the Correct field
-                const { Correct, ...questionWithoutCorrect } = question;
-                return questionWithoutCorrect;
-            }
-            return null;
-        })
-        .filter(q => q !== null);
-
-    return friendQuestions;
-}
-
-function getFailedAttemptsForFriend(friendId) {
-    const attempts = loadAttemptsData();
-    return attempts.filter(attempt => attempt.friendId === friendId && !attempt.isCorrect).length;
+/**
+ * Cuenta los intentos fallidos de un amigo
+ */
+async function getFailedAttemptsForFriend(friendId) {
+    try {
+        const count = await Attempt.countDocuments({ friendId, isCorrect: false });
+        return count;
+    } catch (error) {
+        console.error("Error en getFailedAttemptsForFriend:", error);
+        return 0;
+    }
 }
 
 export { getAllFriends, getFriendById, getQuestionsForFriend, getFailedAttemptsForFriend };
