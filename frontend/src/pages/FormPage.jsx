@@ -19,25 +19,29 @@ const FormPage = () => {
 
     const [loading, setLoading] = useState(false)
 
-    useEffect(() => {
-        if (FriendId) {
-            // 1. Usamos minúsculas para evitar líos en Vercel
-            fetch(`https://charlyshurdlebackend-tau.vercel.app/api/friends/${FriendId}`)
-                .then(response => {
-                    // 2. Validamos si la respuesta es exitosa (status 200-299)
-                    if (!response.ok) throw new Error('Error en la red');
-                    return response.json();
-                })
-                .then(data => {
-                    // 3. Verificamos que data no venga vacío
-                    if (data) setFriend(data);
-                })
-                .catch(error => {
-                    console.error('Error fetching friend data:', error);
-                    // Opcional: setFriend(null) o manejar un estado de error
-                });
-        }
+   |useEffect(() => {
+        if (!FriendId) return;
+
+        const loadFriend = async () => {
+            try {
+                const response = await fetch(
+                    `https://charlyshurdlebackend-tau.vercel.app/api/friends/${FriendId}`
+                );
+
+                if (!response.ok) throw new Error('Error en la red');
+
+                const data = await response.json();
+
+                if (data) setFriend(data);
+
+            } catch (error) {
+                console.error('Error fetching friend data:', error);
+            }
+        };
+
+        loadFriend();
     }, [FriendId]);
+    
 
     useEffect(() => {
         setColorBase(friend.Attempts >= 4 ? "#606060" : friend.Color);
