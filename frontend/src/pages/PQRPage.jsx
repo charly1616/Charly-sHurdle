@@ -19,7 +19,7 @@ const PQRPage = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch('charlyshurdlebackend-tau.vercel.app:5000/api/suggestions/send', {
+            const response = await fetch('https://charlyshurdlebackend-tau.vercel.app/api/suggestions/send', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ text: suggestion })
