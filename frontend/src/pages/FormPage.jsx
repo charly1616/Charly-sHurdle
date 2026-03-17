@@ -29,9 +29,9 @@ const FormPage = () => {
                 );
 
                 if (!response.ok) throw new Error('Error en la red');
-
+                console.log(response)
                 const data = await response.json();
-
+                console.log(data)
                 if (data) setFriend(data);
 
             } catch (error) {
