@@ -13,5 +13,6 @@ export const ENV = {
   OPEN_ROUTER_MODEL: process.env.OPEN_ROUTER_MODEL,
   OPEN_ROUTER_KEY: process.env.OPEN_ROUTER_KEY,
   NODE_ENV: process.env.NODE_ENV,
-  MONGODB_URL: process.env.MONGODB_URL
+  MONGODB_URL: process.env.MONGODB_URL,
+  CLIENT_URL: process.env.CLIENT_URL
 };

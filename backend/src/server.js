@@ -13,13 +13,13 @@ const app = express();
 
 // Configuración de CORS
 app.use(cors({ 
-    origin: "https://charly-s-hurdlefrontend.vercel.app", 
+    origin: ENV.CLIENT_URL, 
     credentials: true 
 }));
 
 // Middleware para Headers y Red Privada
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://charly-s-hurdlefrontend.vercel.app");
+    res.header("Access-Control-Allow-Origin", ENV.CLIENT_URL);
     res.header("Access-Control-Allow-Credentials", "true");
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
