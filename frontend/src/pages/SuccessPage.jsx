@@ -13,7 +13,7 @@ const SuccessPage = () => {
     useEffect(() => {
 
         if (FriendId) {
-            fetch(`http://localhost:5000/api/Friends/${FriendId}`)
+            fetch(`charlyshurdlebackend-tau.vercel.app:5000/api/Friends/${FriendId}`)
                 .then(response => response.json())
                 .then(data => {
                     if (!data.isFinished) {

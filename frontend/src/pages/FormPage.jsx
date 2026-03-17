@@ -19,7 +19,7 @@ const FormPage = () => {
 
     useEffect(() => {
         if (FriendId) {
-            fetch(`http://localhost:5000/api/Friends/${FriendId}`)
+            fetch(`charlyshurdlebackend-tau.vercel.app:5000/api/Friends/${FriendId}`)
                 .then(response => response.json())
                 .then(data => setFriend(data))
                 .catch(error => console.error('Error fetching friend data:', error));
@@ -39,7 +39,7 @@ const FormPage = () => {
     }, [questions, friend.id, navigate, FriendId]);
 
     const updateUser = () => {
-        fetch(`http://localhost:5000/api/Friends/${FriendId}/questions`)
+        fetch(`charlyshurdlebackend-tau.vercel.app:5000/api/Friends/${FriendId}/questions`)
             .then(response => response.json())
             .then(data => {
                 if (!data || data.length === 0) return; // Validación de seguridad
@@ -67,7 +67,7 @@ const FormPage = () => {
         const curQue = questions[0];
         setFeedback({ message: "Verificando...", isVisible: true, isCorrect: false });
 
-        fetch(`http://localhost:5000/api/answers/check/${curQue.id}/${FriendId}`, {
+        fetch(`charlyshurdlebackend-tau.vercel.app:5000/api/answers/check/${curQue.id}/${FriendId}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "AnswerGiven": currentAnswer })
