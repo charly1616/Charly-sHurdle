@@ -19,7 +19,7 @@ const FormPage = () => {
 
     const [loading, setLoading] = useState(false)
 
-   |useEffect(() => {
+    useEffect(() => {
         if (!FriendId) return;
 
         const loadFriend = async () => {
@@ -41,7 +41,7 @@ const FormPage = () => {
 
         loadFriend();
     }, [FriendId]);
-    
+
 
     useEffect(() => {
         setColorBase(friend.Attempts >= 4 ? "#606060" : friend.Color);
