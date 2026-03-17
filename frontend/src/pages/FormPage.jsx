@@ -45,7 +45,7 @@ const FormPage = () => {
         if (questions.length > 0) {
             setCurrentQuestion(questions[0]);
         } else if (friend.id) {
-            navigate("/success", { state: { FriendId }, replace: true});
+            navigate("/success", { state: { FriendId }});
         }
     }, [questions, friend.id, navigate, FriendId]);
 
@@ -233,7 +233,7 @@ const FormPage = () => {
                                     onClick={(e) => {
                                         e.preventDefault();
                                         e.stopPropagation();
-                                        navigate("/", {replace:true});
+                                        navigate("/");
                                     }}
                                 >
                                     Me rindo

@@ -53,12 +53,12 @@ const PQRPage = () => {
 
             {/* HEADER / NAV */}
             <nav className="p-6 max-w-7xl mx-auto w-full flex justify-between items-center">
-                <div className="flex items-center gap-2 cursor-pointer" onClick={(e) => {e.preventDefault();e.stopPropagation(); navigate('/',{replace:true})}}>
+                <div className="flex items-center gap-2 cursor-pointer" onClick={(e) => {e.preventDefault();e.stopPropagation(); navigate('/')}}>
                     <img src="/CharlypusDark.svg" alt="Logo" className="w-8 h-8" />
                     <span className="text-xl font-bold text-gray-800 agu-display">Charly's Hurdle</span>
                 </div>
                 <button 
-                    onClick={(e) => {e.preventDefault();e.stopPropagation(); navigate('/',{replace:true})}}
+                    onClick={(e) => {e.preventDefault();e.stopPropagation(); navigate('/')}}
                     className="text-gray-500 hover:text-[#4db69e] font-semibold transition-colors flex items-center gap-2"
                 >
                     <i className="fas fa-arrow-left"></i> Volver al inicio
@@ -91,7 +91,7 @@ const PQRPage = () => {
                         <div className="flex flex-col md:flex-row gap-4">
                             <button
                                 type="button"
-                                onClick={(e) => {e.preventDefault();e.stopPropagation(); navigate('/',{replace:true})}}
+                                onClick={(e) => {e.preventDefault();e.stopPropagation(); navigate('/')}}
                                 className="order-2 md:order-1 flex-1 py-4 text-gray-400 font-bold hover:bg-gray-50 rounded-2xl transition-all"
                             >
                                 Cancelar

@@ -37,8 +37,7 @@ const FriendCard = ({NickName, Attempts, Icon, Color, isFinished, FriendId}) => 
             navigate("/form", {
             state: {
                 FriendId: FriendId,
-            }, replace: true
-            });
+            }});
         }
         };
 

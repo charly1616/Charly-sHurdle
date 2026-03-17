@@ -17,7 +17,7 @@ const SuccessPage = () => {
                 .then(response => response.json())
                 .then(data => {
                     if (!data.isFinished) {
-                        navigate("/", {replace:true});
+                        navigate("/");
                         return
                     }
                     setFriend(data);
@@ -164,7 +164,7 @@ const SuccessPage = () => {
                 {/* BOTONES DE ACCIÓN */}
                 <div className="mt-10 flex gap-4">
                     <button
-                        onClick={(e) => {e.preventDefault();e.stopPropagation(); navigate('/',{replace:true})}}
+                        onClick={(e) => {e.preventDefault();e.stopPropagation(); navigate('/')}}
                         className="bg-white border border-gray-200 text-gray-500 hover:bg-gray-50 px-8 py-3 rounded-full font-bold shadow-sm transition-all active:scale-95"
                     >
                         Volver
