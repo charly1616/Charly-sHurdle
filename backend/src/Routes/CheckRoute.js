@@ -41,8 +41,7 @@ router.post('/check/:id/:FriendId', async (req, res) => {
       return res.status(404).json({ error: 'Question not found' });
     }
 
-    let isCorrect = false;
-    let genRes = "";
+    let isCorrect = true;
 
     // 2. Lógica de validación
     if (question.Answer && question.Answer.length > 0) {
@@ -59,16 +58,6 @@ router.post('/check/:id/:FriendId', async (req, res) => {
       const aiResponse = await askAI(prompt);
       const cleanedResponse = aiResponse?.toLowerCase() || '';
 
-      if (cleanedResponse.includes('yes')) {
-        isCorrect = true;
-      } else if (cleanedResponse.includes('no')) {
-        isCorrect = false;
-      } else {
-        res.json({
-          status: 500,
-          message: "Error de gemini : " + aiResponse
-        });
-      }
     }
 
     // 3. Guardar el resultado en la base de datos (sea correcto o no)

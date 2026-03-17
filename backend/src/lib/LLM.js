@@ -21,6 +21,7 @@ export default async function askAI(prompt) {
     );
 
     const data = await response.json();
+    console.log(data)
 
     const text = data.choices?.[0]?.message?.content || "Sin respuesta";
 
@@ -32,4 +33,4 @@ export default async function askAI(prompt) {
   }
 }
 
-//askGemini
+console.log(await askAI("Cuantos dias hay"))
