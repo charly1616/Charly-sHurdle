@@ -19,10 +19,21 @@ const FormPage = () => {
 
     useEffect(() => {
         if (FriendId) {
-            fetch(`https://charlyshurdlebackend-tau.vercel.app/api/Friends/${FriendId}`)
-                .then(response => response.json())
-                .then(data => setFriend(data))
-                .catch(error => console.error('Error fetching friend data:', error));
+            // 1. Usamos minúsculas para evitar líos en Vercel
+            fetch(`https://charlyshurdlebackend-tau.vercel.app/api/friends/${FriendId}`)
+                .then(response => {
+                    // 2. Validamos si la respuesta es exitosa (status 200-299)
+                    if (!response.ok) throw new Error('Error en la red');
+                    return response.json();
+                })
+                .then(data => {
+                    // 3. Verificamos que data no venga vacío
+                    if (data) setFriend(data);
+                })
+                .catch(error => {
+                    console.error('Error fetching friend data:', error);
+                    // Opcional: setFriend(null) o manejar un estado de error
+                });
         }
     }, [FriendId]);
 
@@ -39,23 +50,43 @@ const FormPage = () => {
     }, [questions, friend.id, navigate, FriendId]);
 
     const updateUser = () => {
-        fetch(`https://charlyshurdlebackend-tau.vercel.app/api/Friends/${FriendId}/questions`)
-            .then(response => response.json())
-            .then(data => {
-                if (!data || data.length === 0) return; // Validación de seguridad
+    // 1. Iniciamos estado de carga para evitar saltos de lógica
+    setLoading(true); 
 
-                // Fisher-Yates Shuffle (Barajado real)
-                let scrambled = [...data]; // Clonamos para no mutar el original
-                for (let i = scrambled.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [scrambled[i], scrambled[j]] = [scrambled[j], scrambled[i]];
-                }
+    // 2. Usamos la ruta en minúsculas para compatibilidad con Linux/Vercel
+    fetch(`https://charlyshurdlebackend-tau.vercel.app/api/friends/${FriendId}/questions`)
+        .then(response => {
+            if (!response.ok) throw new Error('Error al obtener preguntas');
+            return response.json();
+        })
+        .then(data => {
+            // Validación: Si no hay preguntas, detenemos la carga y dejamos que el useEffect de navegación actúe
+            if (!data || data.length === 0) {
+                setLoading(false);
+                return;
+            }
 
-                setQuestions(scrambled);
-                setCurrentQuestion(scrambled[0]);
-            })
-            .catch(error => console.error('Error fetching questions:', error));
-    };
+            // Fisher-Yates Shuffle (Barajado real)
+            let scrambled = [...data];
+            for (let i = scrambled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [scrambled[i], scrambled[j]] = [scrambled[j], scrambled[i]];
+            }
+
+            // 3. Actualizamos el estado. 
+            // Tip: Si currentQuestion depende de questions[0], 
+            // asegúrate de que tu JSX use questions[0] directamente para evitar desincronización.
+            setQuestions(scrambled);
+            setCurrentQuestion(scrambled[0]);
+            
+            // Finalizamos carga
+            setLoading(false);
+        })
+        .catch(error => {
+            console.error('Error fetching questions:', error);
+            setLoading(false); // Importante: liberar el loading aunque falle
+        });
+};
 
     useEffect(() => {
         if (FriendId) updateUser();

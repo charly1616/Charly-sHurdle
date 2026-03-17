@@ -15,20 +15,22 @@ const HomePage = () => {
     };
 
     useEffect(() => {
-        fetch('https://charlyshurdlebackend-tau.vercel.app/api/friends')
+        // Usamos la ruta exacta que definiste en el backend
+        fetch('https://charlyshurdlebackend-tau.vercel.app/api/Friends') 
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error en la respuesta del servidor');
-                }
+                if (!response.ok) throw new Error('Error al conectar con la API');
                 return response.json();
             })
             .then(data => {
-                const shuffledFriends = [...data].sort(() => Math.random() - 0.5);
-                setFriends(shuffledFriends);
+                // Validamos que 'data' sea un arreglo antes de hacer el spread [...]
+                if (Array.isArray(data)) {
+                    const shuffledFriends = [...data].sort(() => Math.random() - 0.5);
+                    setFriends(shuffledFriends);
+                } else {
+                    console.error('La API no devolvió un arreglo:', data);
+                }
             })
-            .catch(error => {
-                console.error('Error fetching friends:', error);
-            });
+            .catch(error => console.error('Error fetching friends:', error));
     }, []);
 
     return (
