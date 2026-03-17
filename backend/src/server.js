@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 // Rutas API
-app.use("/api/Friends", FriendsRoutes);
+app.use("/api/friends", FriendsRoutes);
 app.use('/api/suggestions', SuggestionsRoute);
 app.use('/api/answers', CheckRoute);
 

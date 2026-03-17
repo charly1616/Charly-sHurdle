@@ -1,5 +1,5 @@
 import express from 'express';
-import askGemini from '../lib/LLM.js';
+import askAI from '../lib/LLM.js';
 // Importamos los modelos directamente para las operaciones de escritura/lectura
 import Question from '../Models/Question.js';
 import Attempt from '../Models/Attempt.js';
@@ -42,6 +42,7 @@ router.post('/check/:id/:FriendId', async (req, res) => {
     }
 
     let isCorrect = false;
+    let genRes = "";
 
     // 2. Lógica de validación
     if (question.Answer && question.Answer.length > 0) {
@@ -53,13 +54,20 @@ router.post('/check/:id/:FriendId', async (req, res) => {
       }
     } else {
       // Pregunta abierta: Usar Gemini
-      const prompt = `Question: ${question.Body}\nCorrect Answer: ${question.Correct}\nUser Answer: ${AnswerGiven}\nIs the user answer correct or very similar to the correct answer? Respond with only 'yes' or 'no'.`;
+      const prompt = `Question: ${question.Body}\nCorrect Answer: ${question.Correct}\nUser Answer: ${AnswerGiven}\nIs the user answer correct or similar to the correct answer? Respond with only 'yes' or 'no'.`;
       
-      const aiResponse = await askGemini(prompt);
+      const aiResponse = await askAI(prompt);
       const cleanedResponse = aiResponse?.toLowerCase() || '';
 
       if (cleanedResponse.includes('yes')) {
         isCorrect = true;
+      } else if (cleanedResponse.includes('no')) {
+        isCorrect = false;
+      } else {
+        res.json({
+          status: 500,
+          message: "Error de gemini : " + aiResponse
+        });
       }
     }
 
